@@ -1,4 +1,4 @@
 package org.firstinspires.ftc.teamcode.mycode;
 
-public class Summerpractoiceweston {
+public class weston_practice {
 }
