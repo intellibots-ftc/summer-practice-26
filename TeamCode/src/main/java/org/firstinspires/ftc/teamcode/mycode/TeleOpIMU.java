@@ -1,7 +1,4 @@
-package org.firstinspires.ftc.teamcode;
-
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.opMode;
+package org.firstinspires.ftc.teamcode.mycode;
 
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -9,9 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.IMU;
 
-import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
-import org.firstinspires.ftc.robotcore.external.navigation.AngularVelocity;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.robotcore.external.navigation.AngularVelocity;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
 
 @TeleOp(name = "IMU + Accel Basic")
@@ -27,9 +23,9 @@ public class TeleOpIMU extends LinearOpMode {
     imu = hardwareMap.get(IMU.class, "imu");
 
     imu.initialize(new IMU.Parameters(
-        new com.qualcomm.hardware.rev.RevHubOrientationOnRobot(
-            com.qualcomm.hardware.rev.RevHubOrientationOnRobot.LogoFacingDirection.UP,
-            com.qualcomm.hardware.rev.RevHubOrientationOnRobot.UsbFacingDirection.FORWARD)));
+        new RevHubOrientationOnRobot(
+            RevHubOrientationOnRobot.LogoFacingDirection.UP,
+            RevHubOrientationOnRobot.UsbFacingDirection.FORWARD)));
 
     waitForStart();
 
