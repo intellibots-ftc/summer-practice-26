@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.pedroPathing;
 
+import com.pedropathing.control.PIDFCoefficients;
 import com.pedropathing.follower.Follower;
 import com.pedropathing.follower.FollowerConstants;
 import com.pedropathing.ftc.FollowerBuilder;
@@ -14,6 +15,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
   public static FollowerConstants followerConstants = new FollowerConstants()
+      .headingPIDFCoefficients(new PIDFCoefficients(1, 0.1, 0.1, 0.01))
       .mass(10);
 
   public static PathConstraints pathConstraints = new PathConstraints(0.99, 100, 1, 1);
@@ -21,7 +23,7 @@ public class Constants {
   public static MecanumConstants driveConstants = new MecanumConstants()
       .maxPower(1)
       .xVelocity(74.960)
-      .yVelocity(0)
+      .yVelocity(44.371152862789124)
       .rightFrontMotorName("right_front_drive")
       .rightRearMotorName("right_back_drive")
       .leftRearMotorName("left_back_drive")
@@ -38,7 +40,7 @@ public class Constants {
       .hardwareMapName("odo")
       .encoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD)
       .forwardEncoderDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD)
-      .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD);
+      .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.REVERSED);
 
   public static Follower createFollower(HardwareMap hardwareMap) {
     return new FollowerBuilder(followerConstants, hardwareMap)
